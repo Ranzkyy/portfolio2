@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" />
+    <script>
+      function message_save() {
+        let name = $("#nama").val();
+        let email = $("#email").val();
+        let msg = $("#msg").val();
+        $.ajax({
+          type: "POST",
+          url: "/contact",
+          data: {
+            name_give : name,
+            email_give : email,
+            msg_give : msg
+          },
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      }
+    </script>
+    <title>PORTFOLIO</title>
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar  navbar-expand-lg navbar-light container pt-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#project">project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+    
+    <!-- HOME -->
+    <section class="home container" id="home">
+        <div class="home-content">
+            <div class="home-img">
+                <img src="/static/image/contoh.png" alt="" />
+            </div>
+            <div class="home-text">
+                <h3>Hello</h3>
+                <h2>I'm <span class="color">Raihan</span></h2>
+                <p>
+                    I'm <span class="color">Student</span> from Dipa Makassar University, <span class="color">i'm a web developer</span> and <span class="color">UI/UX designer.</span> I have a strong passion to become <span class="color">a frontend developer</span><br> Here's a bit more <span class="color">about me.</span>
+                </p>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square' ></i></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  ABOUT -->
+    <section class="about container" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+            <span>Introduction</span>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 col-lg-6 justify-content-center d-flex">
+                <div class="about-img">
+                    <img src="/static/image/IMG_20220608_231558.jpg" alt="">
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-6">
+                <div class="about-text">
+                    <p>I have studied <span class="color">web developer</span> for about 3 years and have studied several materials including <span class="color">frontend web developer </span>and <span class="color">UI/UX design.</span></p>
+                    <div class="information">
+                     <div class="info-box">
+                         <i class="bx bxs-user"></i>
+                         <span>Muh Raihan Zaky</span>
+                     </div>
+                     <div class="info-box">
+                         <i class="bx bxs-phone"></i>
+                         <span>+62 8219 6725 022</span>
+                     </div>
+                     <div class="info-box">
+                         <i class="bx bxs-envelope"></i>
+                         <span>mraihanzaky14@gmail.com</span>
+                     </div>
+                    </div>
+                    <a href="#" class="btnn">Donwload CV</a>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section class="service container" id="service">
+        <div class="heading">
+          <h2>Service</h2>
+          <span>What i'am great at?</span>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+              <div class="service-card">
+                <div class="service-box">
+                  <i class='bx bx-code-alt'></i>
+                  <h3>Web Developer</h3>
+                  <a href="#">Learn More</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+              <div class="service-card">
+                <div class="service-box">
+                  <i class='bx bx-code-block'></i>
+                  <h3>FrontEnd Developer</h3>
+                  <a href="#">Learn More</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+              <div class="service-card">
+                <div class="service-box">
+                  <i class='bx bx-brush'></i>
+                  <h3>Web Design</h3>
+                  <a href="#">Learn More</a>
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="container porjects" id="project">
+        <div class="heading">
+          <h2>Projects</h2>
+          <span>My Portfolio</span>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            <div class="portfolio-box">
+              <img src="/static/image/1660116090251.png" class="portfolio-img" alt="">
+                <div class="portfolio-overlay">
+                  <h2>Company Website</h2>
+                  <a href="https://ranzkyy.github.io/hipnoterapi/">
+                    <i class='bx bx-link-alt'></i>
+                  </a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <div class="portfolio-box">
+              <img src="/static/image/wevv.png" class="portfolio-img" alt="">
+                <div class="portfolio-overlay">
+                  <h2>Company Website</h2>
+                  <a href="https://klotbret3.blogspot.com/">
+                    <i class='bx bx-link-alt'></i>
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-container" id="contact">
+      <div class="heading">
+        <h2>Contact</h2>
+        <span>Communicate with me</span>
+      </div>
+      <div class="row d-flex flex-wrap g-2">
+        <div class="form-group col-sm-6">
+            <input id="nama" type="text" size="50" class="form-control" placeholder="Your Name" >
+        </div>
+        <div class="form-group col-sm-6">
+            <input id="email" type="email" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="form-group col-sm-12">
+            <textarea id="msg" name="comment" rows="6" class="form-control" placeholder="Write Something"></textarea>
+        </div>
+        <div class="form-group col-sm-12 mt-3">
+          <button onclick="message_save()" class="btnn" >submit</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="text-center p-3" style="color: #ad8b73;">
+        © Ranzkyy.
+      </div>
+    </footer>
+  <script src="/static/js/main.js"></script>
+  </body>
+</html>
